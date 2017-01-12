@@ -23,6 +23,8 @@ shinyUI(fluidPage(
        
         h4("Note that i build the data-set manually."),
         
+        h4("The ui.R and server.R can be found here:  https://github.com/DaSenf/DaSenf.github.io"),
+        
         sliderInput("bins",
                    "Number of clubs:",
                    min = 1,
