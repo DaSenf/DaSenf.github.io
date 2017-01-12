@@ -806,13 +806,29 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
+<h3>Some glimpse of the data</h3>
+<div class="slideContent" >
+<pre><code class="r">setwd(&quot;C:/Coursera/business data objects/Week4/European-Football-clubs/&quot;)
+soccertab3l&lt;- read.table(&quot;soccerdata.txt&quot;, sep=&quot;;&quot;, header = T)
+soccertab3l &lt;- soccertab3l[1:3,c(2,4)]
+soccertab3l[,1]&lt;- trimws(soccertab3l[,1])
+soccertab3l
+</code></pre>
+
+<pre><code>            club titlescount
+1 REAL MADRID CF          11
+2       AC MILAN           7
+3   FC BARCELONA           5
+</code></pre>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
 <h3>Have a look at my leaflet map</h3>
 <div class="slideContent" >
-<p>If you follow the following link, you&#39;ll see my leafletmap:</p>
-
-<p><a href="https://dasenf.github.io/LeafletMap.html">https://dasenf.github.io/LeafletMap.html</a></p>
-
-<p>This is the code i used:</p>
+<p>You can see my leafletmap here:
+<a href="https://dasenf.github.io/LeafletMap.html">https://dasenf.github.io/LeafletMap.html</a></p>
 
 <pre><code class="r">suppressWarnings(library(leaflet))
 soccertab3l&lt;- read.table(&quot;soccerdata.txt&quot;, sep=&quot;;&quot;, header = T)
@@ -821,10 +837,7 @@ col[soccertab3l$titlescount&lt;10] &lt;- &quot;orange&quot;
 col[soccertab3l$titlescount&lt;5] &lt;- &quot;yellow&quot;
 col[soccertab3l$titlescount&lt;3] &lt;- &quot;green&quot;
 soccertab3l_wcolor &lt;- data.frame(soccertab3l,col)
-CLmap &lt;- soccertab3l%&gt;%     leaflet()%&gt;%     addTiles()%&gt;% 
-    addCircleMarkers(popup = ~as.character(paste(sep=&quot;&quot;,link,trimws(as.character(club)))),weight=1,
-                     radius = ~as.numeric(titlescount)*6,
-                     color = ~col)
+CLmap &lt;- soccertab3l%&gt;%leaflet()%&gt;%addTiles()%&gt;%  addCircleMarkers(popup=~as.character(paste(sep=&quot;&quot;,link, trimws(as.character(club)))),weight=1,radius = ~as.numeric(titlescount)*6,color = ~col)
 CLmap
 </code></pre>
 
