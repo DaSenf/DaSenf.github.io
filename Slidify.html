@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pitch - Top 10 soccer teams</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Pitch - Top 10 soccer teams">
+  <meta name="author" content="Andreas Essbaumer">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Pitch - Top 10 soccer teams</h1>
+    <h2>Week 4's Assignment</h2>
+    <p>Andreas Essbaumer<br/>Enthusiast</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Hello</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>My name is Andreas Essbaumer and these slides were created on 12th of January 2017</p>
+
+<p>My app displays some very basic data which i constructed myself and contains information about the top 10 European soccer teams measured by the number of European Champions League titles they have won till today.</p>
+
+<p>The data can be downloaded here:</p>
+
+<p><a href="https://github.com/DaSenf/Developing-Data-Products">https://github.com/DaSenf/Developing-Data-Products</a> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Have a look at my leaflet map</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>If you follow the following link, you&#39;ll see my leafletmap:</p>
+
+<p><a href="https://dasenf.github.io/LeafletMap.html">https://dasenf.github.io/LeafletMap.html</a></p>
+
+<p>This is the code i used:</p>
+
+<pre><code class="r">suppressWarnings(library(leaflet))
+soccertab3l&lt;- read.table(&quot;soccerdata.txt&quot;, sep=&quot;;&quot;, header = T)
+col &lt;- rep(&quot;red&quot;,nrow(soccertab3l))
+col[soccertab3l$titlescount&lt;10] &lt;- &quot;orange&quot;
+col[soccertab3l$titlescount&lt;5] &lt;- &quot;yellow&quot;
+col[soccertab3l$titlescount&lt;3] &lt;- &quot;green&quot;
+soccertab3l_wcolor &lt;- data.frame(soccertab3l,col)
+CLmap &lt;- soccertab3l%&gt;%     leaflet()%&gt;%     addTiles()%&gt;% 
+    addCircleMarkers(popup = ~as.character(paste(sep=&quot;&quot;,link,trimws(as.character(club)))),weight=1,
+                     radius = ~as.numeric(titlescount)*6,
+                     color = ~col)
+CLmap
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>My shiny app</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>My shiny app can be found here:</p>
+
+<p><a href="https://dasenf.shinyapps.io/European-Football-clubs/">https://dasenf.shinyapps.io/European-Football-clubs/</a></p>
+
+<p>You can change the style of the histogram in various AWESOME ways. Sometime Mozilla Firefox doens&#39;t display the plotly-plot correctly.
+With Internet Explorer 11 or Chrome it should work though.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Goodbye</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Thank you for looking and reviewing my stuff.</p>
+
+<p>Post me the link of your work in your comment and i&#39;m happy to return the favor</p>
+
+<p>I hope you enjoyed the courses as much as i did.</p>
+
+<p>Best regards,
+Andi</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Hello'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Have a look at my leaflet map'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='My shiny app'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Goodbye'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

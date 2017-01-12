@@ -1,0 +1,11 @@
+index; club;country; titlescount ; lat;lng;link
+1 ;	REAL MADRID CF ;	Spain ;11;40.4530556; -3.6880555555555556;"<b><a href='http://www.realmadrid.com/en'</a></b>"
+2 ;	AC MILAN ;	Italy 	;7;45.4666667;9.183333333333334;"<b><a href='https://www.acmilan.com/en'</a></b>"
+3; 	FC BARCELONA; 	Spain;5;41.3808333;2.1225;"<b><a href='https://www.fcbarcelona.com/'</a></b>"
+4 ;	FC BAYERN MUENCHEN ;	Germany ;5;48.2186111;11.624444444444444;"<b><a href='https://fcbayern.com/de'</a></b>"
+5 ;	FC LIVERPOOL ;	England 	;5;53.4308333;-2.9608333333333334;"<b><a href='http://www.liverpoolfc.com/'</a></b>"
+6 ;	AJAX AMSTERDAM ;	Netherlands 	;4;52.3144444;4.941944444444444;"<b><a href='http://english.ajax.nl/'</a></b>"
+7 ;	INTERNAZIONALE  MILANO ;	Italy 	;3;45.4680556;9.123611111111112;"<b><a href='http://www.inter.it/en/hp'</a></b>"
+8 ;	MANCHESTER UNITED FC ;	England 	;3;53.4630556;-2.1244444444444444;"<b><a href='http://www.manutd.com/'</a></b>"
+9 ;	JUVENTUS FC ;	Italy 	;2;45.1094444;7.641111111111111;"<b><a href='http://www.juventus.com/en/'</a></b>"
+10 ;	FC PORTO ;	Portugal 	;2;41.1616667;-8.58388888888889;"<b><a href='http://www.fcporto.pt/en'</a></b>"
